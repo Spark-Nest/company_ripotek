@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -17,6 +17,16 @@ import { MapPin, Mail, Phone, Send } from "lucide-react";
 const Contact = () => {
   const [formType, setFormType] = useState<string>("consulting");
   const calendlyUrl = (import.meta as any).env?.VITE_CALENDLY_URL || "https://calendly.com/paroyal007/30min";
+
+  // Load Calendly inline widget script once on client
+  useEffect(() => {
+    const src = "https://assets.calendly.com/assets/external/widget.js";
+    if (document.querySelector(`script[src='${src}']`)) return;
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -90,12 +100,10 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="rounded-lg overflow-hidden border">
-                    <iframe
-                      title="Book a meeting on Calendly"
-                      src={calendlyUrl}
-                      className="w-full h-[720px] bg-background"
-                      frameBorder="0"
-                      loading="lazy"
+                    <div
+                      className="calendly-inline-widget"
+                      data-url={`${calendlyUrl}${calendlyUrl.includes("?") ? "&" : "?"}embed_domain=${typeof window !== 'undefined' ? window.location.hostname : 'localhost'}&embed_type=Inline`}
+                      style={{ minWidth: "320px", height: "720px" }}
                     />
                   </div>
                   <div className="mt-3 text-right">
