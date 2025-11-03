@@ -28,6 +28,11 @@ const Contact = () => {
     document.body.appendChild(script);
   }, []);
 
+  // Build simple widget URL with required embed params only
+  const widgetUrl = (typeof window !== 'undefined')
+    ? `${calendlyUrl}${calendlyUrl.includes('?') ? '&' : '?'}embed_domain=${window.location.hostname || 'localhost'}&embed_type=Inline`
+    : calendlyUrl;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success("Message sent successfully! We'll be in touch soon.");
@@ -102,7 +107,7 @@ const Contact = () => {
                   <div className="rounded-lg overflow-hidden border">
                     <div
                       className="calendly-inline-widget"
-                      data-url={`${calendlyUrl}${calendlyUrl.includes("?") ? "&" : "?"}embed_domain=${typeof window !== 'undefined' ? window.location.hostname : 'localhost'}&embed_type=Inline`}
+                      data-url={widgetUrl}
                       style={{ minWidth: "320px", height: "720px" }}
                     />
                   </div>
