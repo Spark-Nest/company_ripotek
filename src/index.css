@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 0 0% 100%;
+    --foreground: 220 70% 15%;
+
+    /* Brand colors - Deep Navy & Teal */
+    --primary: 220 70% 20%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 220 60% 35%;
+    --primary-glow: 220 70% 50%;
+
+    --accent: 180 70% 45%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 180 60% 60%;
+    --accent-glow: 180 80% 55%;
+
+    /* Supporting colors */
+    --secondary: 30 10% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 30 8% 70%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 70% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 70% 15%;
+
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 20% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 180 70% 45%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 70% 20%), hsl(220 60% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(180 70% 45%), hsl(180 80% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 70% 20%) 0%, hsl(220 60% 30%) 50%, hsl(180 60% 35%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 15% 98%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px hsl(220 70% 20% / 0.08);
+    --shadow-medium: 0 4px 16px hsl(220 70% 20% / 0.12);
+    --shadow-strong: 0 10px 30px hsl(220 70% 20% / 0.2);
+    --shadow-glow: 0 0 40px hsl(180 80% 55% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 220 70% 8%;
+    --foreground: 0 0% 98%;
+
+    --primary: 180 70% 50%;
+    --primary-foreground: 220 70% 10%;
+    --primary-light: 180 60% 60%;
+    --primary-glow: 180 80% 60%;
+
+    --accent: 220 60% 40%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 220 50% 55%;
+    --accent-glow: 220 70% 60%;
+
+    --secondary: 30 10% 35%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 30 8% 50%;
+
+    --card: 220 60% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 60% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --muted: 220 40% 18%;
+    --muted-foreground: 220 15% 65%;
+
+    --border: 220 40% 20%;
+    --input: 220 40% 20%;
+    --ring: 180 70% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(180 70% 50%), hsl(180 80% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(220 60% 40%), hsl(220 70% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 70% 12%) 0%, hsl(220 60% 18%) 50%, hsl(180 60% 25%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(220 70% 8%) 0%, hsl(220 60% 12%) 100%);
+
+    --shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 4px 16px hsl(0 0% 0% / 0.4);
+    --shadow-strong: 0 10px 30px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 40px hsl(180 80% 55% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  .gradient-bg {
+    background-image: var(--gradient-hero);
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6 lg:px-8;
+  }
+}
