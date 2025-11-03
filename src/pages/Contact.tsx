@@ -16,6 +16,7 @@ import { MapPin, Mail, Phone, Send } from "lucide-react";
 
 const Contact = () => {
   const [formType, setFormType] = useState<string>("consulting");
+  const calendlyUrl = (import.meta as any).env?.VITE_CALENDLY_URL || "https://calendly.com/paroyal007/30min";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -88,10 +89,19 @@ const Contact = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="p-8 bg-muted/30 rounded-lg border-2 border-dashed border-border text-center">
-                    <p className="text-sm text-muted-foreground">
-                      Booking widget integration coming soon
-                    </p>
+                  <div className="rounded-lg overflow-hidden border">
+                    <iframe
+                      title="Book a meeting on Calendly"
+                      src={calendlyUrl}
+                      className="w-full h-[720px] bg-background"
+                      frameBorder="0"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="mt-3 text-right">
+                    <a href={calendlyUrl} target="_blank" rel="noopener noreferrer" className="text-sm underline text-accent hover:opacity-80">
+                      Open in Calendly
+                    </a>
                   </div>
                 </CardContent>
               </Card>
