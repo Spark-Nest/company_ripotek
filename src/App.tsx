@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -12,6 +13,7 @@ import Training from "./pages/Training";
 import CaseStudies from "./pages/CaseStudies";
 import Resources from "./pages/Resources";
 import Whitepaper from "./pages/Whitepaper";
+import Syllabus from "./pages/Syllabus";
 import Careers from "./pages/Careers";
 import CareerJob from "./pages/CareerJob";
 import Contact from "./pages/Contact";
@@ -31,6 +33,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <div className="flex flex-col min-h-screen">
+          <ScrollToTop />
           <Navigation />
           <main className="flex-1">
             <Routes>
@@ -38,6 +41,7 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/training" element={<Training />} />
+              <Route path="/training/syllabus/:slug" element={<Syllabus />} />
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />

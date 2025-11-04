@@ -25,6 +25,23 @@
   </head>
 
   <body>
+    <style>
+      @media print {
+        nav, footer, .section-padding.gradient-bg, .no-print { display: none !important; }
+        body { margin: 0 !important; color: #000; }
+        .container-custom { max-width: 100% !important; padding-left: 0 !important; padding-right: 0 !important; }
+        .section-padding { padding-top: 0 !important; padding-bottom: 0 !important; }
+        @page { margin: 12mm; }
+        a { color: inherit !important; text-decoration: none !important; }
+        /* Page breaks for readable PDFs */
+        .prose h2 { break-before: page; page-break-before: always; }
+        .prose h2:first-child { break-before: auto; page-break-before: auto; }
+        .prose h3 { break-inside: avoid; page-break-inside: avoid; }
+        .prose table, .prose img, .prose pre { break-inside: avoid; page-break-inside: avoid; }
+      }
+      .print-only { display: none; }
+      @media print { .print-only { display: block !important; } }
+    </style>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

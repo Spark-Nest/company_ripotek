@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import TrainingCard from "@/components/TrainingCard";
+import { getSyllabus } from "@/lib/syllabi";
 import { 
   GraduationCap, 
   Users, 
@@ -20,7 +21,7 @@ const Training = () => {
     {
       title: "Power BI Analyst",
       description: "Master data visualization and business intelligence with Microsoft Power BI.",
-      duration: "8 weeks",
+      duration: "12 weeks",
       level: "Beginner to Advanced",
       format: "Hybrid",
       highlights: [
@@ -29,12 +30,13 @@ const Training = () => {
         "Dashboard design best practices",
         "Real-time analytics implementation",
         "Row-level security configuration"
-      ]
+      ],
+      syllabusSlug: "power-bi-analyst"
     },
     {
       title: "Azure Data Engineer",
       description: "Design and implement data solutions on Microsoft Azure platform.",
-      duration: "10 weeks",
+      duration: "24 weeks",
       level: "Intermediate",
       format: "Live Online",
       highlights: [
@@ -43,12 +45,13 @@ const Training = () => {
         "Data lake architecture",
         "Azure Databricks integration",
         "Certification preparation (DP-203)"
-      ]
+      ],
+      syllabusSlug: "azure-data-engineer"
     },
     {
       title: "Databricks Engineer",
       description: "Build scalable data pipelines and lakehouse architectures with Databricks.",
-      duration: "8 weeks",
+      duration: "24 weeks",
       level: "Intermediate to Advanced",
       format: "Hybrid",
       highlights: [
@@ -57,7 +60,8 @@ const Training = () => {
         "Unity Catalog administration",
         "Medallion architecture implementation",
         "MLflow integration"
-      ]
+      ],
+      syllabusSlug: "databricks-engineer"
     },
     {
       title: "Business Intelligence Analyst",
@@ -71,12 +75,13 @@ const Training = () => {
         "ETL concepts and tools",
         "Power BI + SQL Server",
         "Business storytelling with data"
-      ]
+      ],
+      syllabusSlug: "business-intelligence-analyst"
     },
     {
       title: "AI Engineer",
       description: "Build and deploy machine learning and AI solutions in production.",
-      duration: "10 weeks",
+      duration: "24 weeks",
       level: "Advanced",
       format: "Hybrid",
       highlights: [
@@ -85,12 +90,13 @@ const Training = () => {
         "MLOps best practices",
         "GenAI and LangChain",
         "Model deployment strategies"
-      ]
+      ],
+      syllabusSlug: "ai-engineer"
     },
     {
       title: "Prompt Engineer",
       description: "Master the art of prompt engineering for generative AI applications.",
-      duration: "4 weeks",
+      duration: "12 weeks",
       level: "Beginner to Intermediate",
       format: "Live Online",
       highlights: [
@@ -99,12 +105,13 @@ const Training = () => {
         "RAG implementation",
         "Chain-of-thought techniques",
         "Production prompt management"
-      ]
+      ],
+      syllabusSlug: "prompt-engineering"
     },
     {
       title: "Python for Data",
       description: "Python programming fundamentals for data analysis and engineering.",
-      duration: "6 weeks",
+      duration: "12 weeks",
       level: "Beginner",
       format: "Live Online",
       highlights: [
@@ -113,12 +120,13 @@ const Training = () => {
         "Data visualization with Matplotlib",
         "API integration",
         "Jupyter notebooks"
-      ]
+      ],
+      syllabusSlug: "python-for-data"
     },
     {
       title: "Azure Data Factory Masterclass",
       description: "Deep dive into Azure Data Factory for enterprise ETL/ELT solutions.",
-      duration: "6 weeks",
+      duration: "12 weeks",
       level: "Intermediate",
       format: "Live Online",
       highlights: [
@@ -127,7 +135,8 @@ const Training = () => {
         "CI/CD for ADF",
         "Performance optimization",
         "Integration with other Azure services"
-      ]
+      ],
+      syllabusSlug: "azure-data-factory-masterclass"
     }
   ];
 
@@ -257,7 +266,7 @@ const Training = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Course <span className="gradient-text">Catalog</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground whitespace-nowrap">
               Comprehensive training programs designed to prepare you for in-demand data roles
             </p>
           </div>
@@ -265,7 +274,10 @@ const Training = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {courses.map((course, index) => (
               <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
-                <TrainingCard {...course} />
+                <TrainingCard 
+                  {...course} 
+                  priceCad={course.syllabusSlug ? getSyllabus(course.syllabusSlug)?.priceCad : undefined}
+                />
               </div>
             ))}
           </div>

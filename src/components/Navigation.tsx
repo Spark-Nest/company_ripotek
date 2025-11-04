@@ -52,9 +52,6 @@ const Navigation = () => {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Button asChild variant="outline">
-              <Link to="/contact">Contact Us</Link>
-            </Button>
             <Button asChild className="bg-gradient-to-r from-primary to-accent hover:opacity-90">
               <Link to="/contact">Let's Talk</Link>
             </Button>
@@ -73,9 +70,6 @@ const Navigation = () => {
                   {link.name}
                 </Link>)}
               <div className="flex flex-col gap-2 mt-4 px-4">
-                <Button asChild variant="outline" className="w-full">
-                  <Link to="/contact" onClick={() => setIsOpen(false)}>Contact Us</Link>
-                </Button>
                 <Button asChild className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90">
                   <Link to="/contact" onClick={() => setIsOpen(false)}>Book Discovery Call</Link>
                 </Button>

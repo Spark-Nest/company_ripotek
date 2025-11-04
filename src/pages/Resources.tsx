@@ -7,18 +7,6 @@ import { whitepapers } from "@/lib/whitepapers";
 const Resources = () => {
   const resourceCategories = [
     {
-      icon: FileText,
-      title: "Whitepapers & Research",
-      description: "In-depth analysis on data architecture, governance, and industry trends.",
-      comingSoon: false
-    },
-    {
-      icon: Video,
-      title: "Webinar Replays",
-      description: "On-demand access to our expert-led webinars on data and AI topics.",
-      comingSoon: true
-    },
-    {
       icon: Download,
       title: "Templates & Tools",
       description: "Downloadable templates for data governance, architecture design, and more.",
@@ -134,11 +122,14 @@ const Resources = () => {
               Blog & <span className="gradient-text">Newsletter</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-              Our thought leadership blog and monthly newsletter are currently in development. 
-              Stay tuned for expert insights on data architecture, AI trends, and industry best practices.
+              Our thought leadership blog is now live. Explore expert insights on data architecture, AI trends, and industry best practices.
+              Subscribe to our monthly newsletter, launching soon.
             </p>
+            <Link to="/blog" className="inline-flex items-center text-accent font-medium mb-4">
+              Visit the Blog <ArrowRight className="h-4 w-4 ml-1" />
+            </Link>
             <Badge variant="outline" className="text-base px-6 py-2">
-              Launching Q2 2025
+              Newsletter launching Q2 2025
             </Badge>
           </div>
         </div>
