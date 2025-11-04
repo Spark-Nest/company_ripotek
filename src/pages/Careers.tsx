@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -21,6 +21,7 @@ import {
 
 const Careers = () => {
   const navigate = useNavigate();
+  const [highlightOpenings, setHighlightOpenings] = useState(false);
   const benefits = [
     {
       icon: TrendingUp,
@@ -73,6 +74,19 @@ const Careers = () => {
       navigate(`/careers/${hash}`, { replace: true });
     }
   }, [navigate]);
+
+  // Highlight and focus "Open Positions" when linked via #openings
+  useEffect(() => {
+    if (window.location.hash === '#openings') {
+      setHighlightOpenings(true);
+      const el = document.getElementById('openings');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      const timer = setTimeout(() => setHighlightOpenings(false), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 const onShare = async (title: string, slug: string) => {
     const url = buildJobUrl(slug);
     if ((navigator as any).share) {
@@ -208,7 +222,7 @@ const onShare = async (title: string, slug: string) => {
 
       {/* Open Positions */}
       <section id="openings" className="section-padding">
-        <div className="container-custom">
+        <div className={`container-custom ${highlightOpenings ? 'ring-2 ring-accent rounded-2xl bg-accent/5 transition' : ''}`}>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Open <span className="gradient-text">Positions</span>

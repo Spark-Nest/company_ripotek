@@ -167,8 +167,8 @@ const Training = () => {
             <Badge className="mb-6 px-4 py-2 bg-accent text-accent-foreground">
               Training-to-Hire Model
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Launch Your Data Career
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-[0.01em] md:tracking-[0.02em]">
+              Launch Your Data Career @ <span className="gradient-text ml-1">Ripotek Academy</span>
             </h1>
             <p className="text-xl opacity-90 mb-8">
               Industry-leading training programs with hands-on projects, mentorship, 
@@ -260,7 +260,7 @@ const Training = () => {
       </section>
 
       {/* Course Catalog */}
-      <section className="section-padding">
+      <section id="programs" className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">

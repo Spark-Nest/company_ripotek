@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Mail, Phone, Linkedin, Twitter } from "lucide-react";
+import { MapPin, Mail, Phone, Linkedin, Facebook, Instagram, Youtube, Github, Twitter } from "lucide-react";
 import ripotekLogo from "@/assets/ripotek-logo.png";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -129,11 +129,23 @@ const Footer = () => {
               </Link>
             </div>
             <div className="flex items-center gap-4">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity">
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity" aria-label="Twitter">
                 <Twitter className="h-5 w-5" />
+              </a>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity" aria-label="Facebook">
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity" aria-label="Instagram">
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity" aria-label="YouTube">
+                <Youtube className="h-5 w-5" />
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity" aria-label="GitHub">
+                <Github className="h-5 w-5" />
               </a>
             </div>
           </div>

@@ -64,20 +64,23 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={heroImage} alt="Data Engineering Hero" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 gradient-bg opacity-90" />
+          <video className="w-full h-full object-cover" autoPlay muted loop playsInline preload="metadata" poster={heroImage}>
+            <source src="/media/hero.mp4" type="video/mp4" />
+            <source src="https://cdn.coverr.co/videos/coverr-coding-and-collaboration-6994/1080p.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-br from-sky-900/70 via-primary/60 to-emerald-800/70" />
+          <div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-emerald-500/20 blur-3xl" />
+          <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-sky-500/20 blur-3xl" />
         </div>
         
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="gradient-text">Design. Engineer. Deliver.</span>
-              
-              Enterprise Data Solutions
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+              <span className="gradient-text">Envision. Engineer. Elevate.</span>
+              <br />Modern Data Systems, Real Outcomes.
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Transform your data landscape with governed self-service BI, Azure modernization, 
-              and world-class training from seasoned industry professionals.
+            <p className="text-lg md:text-xl text-muted-foreground/90 mb-8 max-w-3xl mx-auto">
+              We design and build resilient analytics platforms on Azure and Databricks—governed, performant, and ready for scale. Then we upskill your teams to run them.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-lg px-8 text-[#000a00]/[0.51]">
@@ -92,6 +95,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Removed stats ribbon as requested */}
 
       {/* Stats Section */}
       <section className="section-padding bg-muted/30">

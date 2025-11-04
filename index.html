@@ -26,6 +26,9 @@
 
   <body>
     <style>
+      /* Prevent layout shift from scrollbar appearing/disappearing */
+      html { scrollbar-gutter: stable both-edges; overflow-y: scroll; }
+      body { overflow-y: scroll; min-height: 100%; }
       @media print {
         nav, footer, .section-padding.gradient-bg, .no-print { display: none !important; }
         body { margin: 0 !important; color: #000; }

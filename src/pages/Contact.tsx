@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -12,11 +12,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { MapPin, Mail, Phone, Send } from "lucide-react";
+import { MapPin, Mail, Phone, Send, Calendar as CalendarIcon, Inbox } from "lucide-react";
 
 const Contact = () => {
   const [formType, setFormType] = useState<string>("consulting");
   const calendlyUrl = (import.meta as any).env?.VITE_CALENDLY_URL || "https://calendly.com/paroyal007/30min";
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   // Load Calendly inline widget script once on client
   useEffect(() => {
@@ -37,6 +38,14 @@ const Contact = () => {
     e.preventDefault();
     toast.success("Message sent successfully! We'll be in touch soon.");
   };
+
+  const handleRequestProposal = () => {
+    setFormType("consulting");
+    // Always jump to top for a clear start
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    toast.success("Switched to Consulting — tell us about your project.");
+  };
+
 
   return (
     <div className="min-h-screen pt-20">
@@ -96,19 +105,28 @@ const Contact = () => {
                 </div>
               </div>
 
-              <Card className="border-2 border-accent/50 bg-accent/5">
+              {/* Booking calendar moved next to the form */}
+            </div>
+
+            {/* Booking Calendar + Contact Form side-by-side */}
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+              {/* Booking Calendar */}
+              <Card className="border-2 border-accent/60 bg-accent/5 h-full flex flex-col" style={{ minHeight: 720 }}>
                 <CardHeader>
-                  <CardTitle className="text-lg">Booking Calendar</CardTitle>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-xs font-semibold shadow mb-2 w-fit">
+                    <CalendarIcon className="h-3.5 w-3.5" /> Live Booking
+                  </div>
+                  <CardTitle className="text-2xl font-brand">Booking Calendar</CardTitle>
                   <CardDescription>
                     Schedule a discovery call directly on our calendar
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <div className="rounded-lg overflow-hidden border">
+                <CardContent className="flex-1 flex flex-col">
+                  <div className="rounded-lg overflow-hidden border flex-1">
                     <div
-                      className="calendly-inline-widget"
+                      className="calendly-inline-widget h-full"
                       data-url={widgetUrl}
-                      style={{ minWidth: "320px", height: "720px" }}
+                      style={{ minWidth: "320px", height: "100%" }}
                     />
                   </div>
                   <div className="mt-3 text-right">
@@ -118,19 +136,20 @@ const Contact = () => {
                   </div>
                 </CardContent>
               </Card>
-            </div>
 
-            {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <Card className="border-2">
+              {/* Contact Form */}
+              <Card className="border-2 h-full flex flex-col" style={{ minHeight: 720 }}>
                 <CardHeader>
-                  <CardTitle className="text-2xl">Send Us a Message</CardTitle>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-xs font-semibold shadow mb-2 w-fit">
+                    <Inbox className="h-3.5 w-3.5" /> Contact Form
+                  </div>
+                  <CardTitle className="text-2xl font-brand">Send Us a Message</CardTitle>
                   <CardDescription>
                     Fill out the form below and we'll get back to you within 24 hours
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                <CardContent className="flex-1">
+                  <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                     {/* Form Type Selection */}
                     <div className="space-y-2">
                       <Label htmlFor="formType">I'm interested in</Label>
@@ -246,7 +265,7 @@ const Contact = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full" variant="outline">
+                <Button className="w-full" variant="outline" onClick={handleRequestProposal}>
                   Request Proposal
                 </Button>
               </CardContent>
@@ -260,8 +279,10 @@ const Contact = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full" variant="outline">
-                  Download Deck
+                <Button className="w-full" variant="outline" asChild>
+                  <a href="/capabilities/capabilities.html" target="_blank" rel="noopener noreferrer">
+                    Download Deck
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -274,8 +295,10 @@ const Contact = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full" variant="outline">
-                  Join Network
+                <Button className="w-full" variant="outline" asChild>
+                  <a href="/careers#openings" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>
+                    Join Network
+                  </a>
                 </Button>
               </CardContent>
             </Card>

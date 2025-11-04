@@ -29,6 +29,7 @@ const Services = () => {
         "Future state design recommendations",
         "Technology stack evaluation"
       ]
+      , mediaUrl: "https://cdn.coverr.co/videos/coverr-chart-analytics-visualization-9709/1080p.mp4", mediaPoster: "/media/strategy.jpg"
     },
     {
       icon: Shield,
@@ -40,6 +41,7 @@ const Services = () => {
         "Compliance framework design",
         "Data quality standards"
       ]
+      , mediaUrl: "https://cdn.coverr.co/videos/coverr-secure-laptop-typing-5823/1080p.mp4", mediaPoster: "/media/governance.jpg"
     },
     {
       icon: GitBranch,
@@ -51,6 +53,7 @@ const Services = () => {
         "Risk mitigation planning",
         "ROI modeling and projections"
       ]
+      , mediaUrl: "https://cdn.coverr.co/videos/coverr-time-lapse-of-road-traffic-9879/1080p.mp4", mediaPoster: "/media/roadmap.jpg"
     }
   ];
 
@@ -65,6 +68,7 @@ const Services = () => {
         "Delta Lake implementation",
         "Unity Catalog configuration"
       ]
+      , mediaUrl: "https://cdn.coverr.co/videos/coverr-server-room-7557/1080p.mp4", mediaPoster: "/media/lakehouse.jpg"
     },
     {
       icon: Workflow,
@@ -76,6 +80,7 @@ const Services = () => {
         "Data orchestration workflows",
         "Pipeline monitoring & alerting"
       ]
+      , mediaUrl: "https://cdn.coverr.co/videos/coverr-circuit-board-visualization-2672/1080p.mp4", mediaPoster: "/media/pipelines.jpg"
     },
     {
       icon: BarChart3,
@@ -87,6 +92,7 @@ const Services = () => {
         "DAX calculation development",
         "Performance optimization"
       ]
+      , mediaUrl: "https://cdn.coverr.co/videos/coverr-user-interface-analytics-9701/1080p.mp4", mediaPoster: "/media/semantic.jpg"
     }
   ];
 
@@ -101,6 +107,7 @@ const Services = () => {
         "Mobile-optimized reports",
         "Row-level security implementation"
       ]
+      , mediaUrl: "https://cdn.coverr.co/videos/coverr-tapping-on-graphs-6697/1080p.mp4", mediaPoster: "/media/powerbi.jpg"
     },
     {
       icon: BarChart3,
@@ -112,6 +119,7 @@ const Services = () => {
         "Executive dashboard creation",
         "Performance tracking systems"
       ]
+      , mediaUrl: "https://cdn.coverr.co/videos/coverr-dashboard-stats-7213/1080p.mp4", mediaPoster: "/media/kpis.jpg"
     },
     {
       icon: Sparkles,
@@ -123,6 +131,7 @@ const Services = () => {
         "API integration",
         "Custom visualization development"
       ]
+      , mediaUrl: "https://cdn.coverr.co/videos/coverr-coding-dashboard-6165/1080p.mp4", mediaPoster: "/media/embedded.jpg"
     }
   ];
 
@@ -214,7 +223,7 @@ const Services = () => {
       </section>
 
       {/* Strategy & Architecture */}
-      <section className="section-padding">
+      <section id="strategy" className="section-padding">
         <div className="container-custom">
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -236,7 +245,7 @@ const Services = () => {
       </section>
 
       {/* Build & Engineering */}
-      <section className="section-padding bg-muted/30">
+      <section id="engineering" className="section-padding bg-muted/30">
         <div className="container-custom">
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -257,7 +266,7 @@ const Services = () => {
       </section>
 
       {/* Analytics & BI */}
-      <section className="section-padding">
+      <section id="analytics" className="section-padding">
         <div className="container-custom">
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -278,7 +287,7 @@ const Services = () => {
       </section>
 
       {/* MLOps & AI */}
-      <section className="section-padding bg-muted/30">
+      <section id="ai" className="section-padding bg-muted/30">
         <div className="container-custom">
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
