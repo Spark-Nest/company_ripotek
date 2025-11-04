@@ -144,8 +144,13 @@ const Whitepaper = () => {
 
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid gap-10 lg:grid-cols-[1fr,300px] max-w-5xl mx-auto">
-            <article className="prose prose-lg prose-neutral dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: html }} />
+          <div className="grid gap-8 lg:gap-10 lg:grid-cols-[1fr,300px] max-w-5xl mx-auto">
+            <div className="min-w-0">
+              <article
+                className="prose prose-sm md:prose-base lg:prose-lg prose-neutral dark:prose-invert max-w-none break-words"
+                dangerouslySetInnerHTML={{ __html: html }}
+              />
+            </div>
             <aside className="hidden lg:block">
               <div className="sticky top-28 rounded-xl border-2 p-5 bg-card">
                 <div className="text-xs uppercase tracking-wide text-muted-foreground mb-3">Table of contents</div>
@@ -198,7 +203,7 @@ function renderMarkdown(md: string): { html: string; headings: Heading[] } {
     if (inOl) { htmlParts.push("</ol>"); inOl = false; }
   };
   const inline = (text: string) => {
-    let t = text.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m, alt, src) => `<img src="${String(src)}" alt="${String(alt)}" class="rounded-xl border my-6"/>`);
+    let t = text.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m, alt, src) => `<img src="${String(src)}" alt="${String(alt)}" class="max-w-full h-auto rounded-xl border my-6"/>`);
     t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-accent underline-offset-2 hover:underline" target="_blank" rel="noopener noreferrer">$1<\/a>');
     t = t.replace(/`([^`]+)`/g, "<code>$1</code>");
     t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
