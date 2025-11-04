@@ -107,6 +107,15 @@ All colors MUST be HSL.
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Offset anchor scroll for fixed navigation */
+  [id] {
+    scroll-margin-top: 6rem; /* ~96px matches nav height + padding */
+  }
+
   * {
     @apply border-border;
   }

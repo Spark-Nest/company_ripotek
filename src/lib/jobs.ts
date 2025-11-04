@@ -1,0 +1,687 @@
+export type JobSection = {
+  heading: string;
+  paragraphs?: string[];
+  items?: string[];
+};
+
+export type Job = {
+  title: string;
+  slug: string;
+  department: string;
+  employmentType: string;
+  location: string;
+  salaryRange?: string;
+  travel?: string;
+  reportingTo?: string;
+  compensation?: string;
+  commitment?: string;
+  summary: string;
+  roleOverview: string;
+  sections: JobSection[];
+  interviewProcess?: string[];
+  timeline?: string;
+  howToApply: {
+    email: string;
+    subject: string;
+    instructions?: string[];
+  };
+};
+
+export const companyOverview =
+  "Ripotek Technologies Inc. is a Calgary-based data and AI consultancy specializing in modern data platform implementations, analytics, and professional training. Since 2023, we've served 50+ enterprise clients across Energy, Financial Services, and Public Sector, delivering $12M+ in measurable business value. Our dual mission: architect enterprise-grade data solutions and develop world-class technical talent through our training programs with an 85% placement rate.";
+
+export const equalOpportunityNotice =
+  "Ripotek Technologies Inc. is an equal opportunity employer committed to building a diverse and inclusive team. We welcome applications from all qualified candidates regardless of race, color, religion, sex, sexual orientation, gender identity, national origin, disability, or veteran status. We encourage applications from underrepresented groups in tech. Accommodation available upon request during recruitment.";
+
+export const jobs: Job[] = [
+  {
+    title: "Senior Data Architect",
+    slug: "senior-data-architect",
+    department: "Consulting",
+    employmentType: "Full-Time",
+    location: "Calgary, AB (Hybrid - 2 days/week in office)",
+    salaryRange: "$130,000 - $165,000 CAD + bonus",
+    travel: "10-20% (primarily Western Canada)",
+    summary:
+      "Lead the design and implementation of modern data platforms for enterprise clients on Azure, Databricks, and Microsoft Fabric, translating business requirements into scalable, governed architectures.",
+    roleOverview:
+      "As a Senior Data Architect, you'll lead the design and implementation of modern data platforms for enterprise clients across Energy, Financial Services, and Public Sector. You'll work directly with C-level stakeholders to translate business requirements into scalable, governed data architectures on Azure, Databricks, and Microsoft Fabric.",
+    sections: [
+      { heading: "Client Delivery (60%)", items: [
+        "Lead data architecture assessments and gap analysis for enterprise clients",
+        "Design target-state architectures (lakehouse, data mesh, modern data warehouse)",
+        "Create detailed technical roadmaps with phased implementation plans",
+        "Architect end-to-end solutions: ingestion, storage, processing, consumption layers",
+        "Develop governance frameworks: data cataloging, lineage, quality, security",
+        "Lead discovery workshops and present architectural recommendations to executives",
+        "Mentor junior consultants and provide technical oversight on projects",
+        "Ensure solutions align with best practices and compliance (GDPR, PIPEDA, SOC 2)",
+      ]},
+      { heading: "Pre-Sales & Business Development (20%)", items: [
+        "Support sales with technical discovery and proposal development",
+        "Develop client-facing architecture diagrams and solution designs",
+        "Provide effort estimates and technical scoping for proposals",
+        "Present capabilities and case studies to prospective clients",
+        "Participate in industry conferences and networking events",
+      ]},
+      { heading: "Thought Leadership (10%)", items: [
+        "Contribute to Ripotek's knowledge base and best practices",
+        "Mentor team members on architecture patterns and methodologies",
+        "Stay current with emerging technologies and platform updates",
+        "Write whitepapers and blog posts on data architecture topics",
+        "Present at internal lunch-and-learns and training sessions",
+      ]},
+      { heading: "Internal Projects (10%)", items: [
+        "Contribute to internal IP (accelerators, frameworks, templates)",
+        "Participate in hiring and interviewing candidates",
+        "Support development of training curriculum content",
+        "Participate in strategic planning and service offerings refinement",
+      ]},
+      { heading: "Required Qualifications — Experience", items: [
+        "8+ years in data architecture, engineering, or related roles",
+        "5+ years designing and implementing enterprise data platforms",
+        "3+ years with Azure data services (Data Lake, Synapse, Data Factory, Databricks)",
+        "Delivered 5+ large-scale data platform implementations",
+        "Experience across multiple industries (Energy, Finance, or Public Sector preferred)",
+      ]},
+      { heading: "Required Qualifications — Technical Skills", items: [
+        "Cloud: Azure (primary), AWS/GCP (secondary)",
+        "Platforms: Azure Synapse, Databricks, Microsoft Fabric, Snowflake",
+        "Modeling: Dimensional, Data Vault 2.0, OBT patterns",
+        "Frameworks: TOGAF, Zachman or similar",
+        "Governance: Azure Purview, Collibra or similar",
+        "Programming: SQL (advanced), Python/Scala (intermediate)",
+        "DevOps: Git, Azure DevOps, CI/CD",
+        "BI: Power BI, Tableau, or Looker",
+      ]},
+      { heading: "Required Qualifications — Soft Skills", items: [
+        "Exceptional communication; explain complex concepts to non-technical stakeholders",
+        "Strong facilitation for workshops and discovery sessions",
+        "Ability to influence and gain stakeholder buy-in",
+        "Client relationship management experience",
+        "Comfortable presenting to C-level executives",
+        "Self-motivated, independent, strong problem-solving",
+      ]},
+      { heading: "Preferred Qualifications", items: [
+        "Azure Solutions Architect Expert (Microsoft)",
+        "Databricks Certified Data Engineer/Architect",
+        "TOGAF 9.2",
+        "Experience with data mesh patterns",
+        "Knowledge of AI/ML platform design",
+        "Prior consulting experience",
+        "Domain knowledge: Oil & Gas, Banking, Government",
+      ]},
+      { heading: "What We Offer — Compensation & Benefits", items: [
+        "Competitive salary $130K-$165K + 10-20% bonus",
+        "RRSP matching (5%)",
+        "Comprehensive health, dental, vision",
+        "Professional development budget ($5,000/year)",
+        "Certification & training support",
+        "Annual tech allowance ($1,500)",
+      ]},
+      { heading: "What We Offer — Work Environment", items: [
+        "Hybrid: 2 days/week in Calgary office",
+        "Flexible hours (core 10am-3pm MT)",
+        "Modern downtown office, standing desks",
+        "Latest MacBook Pro or Surface Laptop",
+        "Home office allowance ($2,000)",
+      ]},
+      { heading: "What We Offer — Growth & Development", items: [
+        "Cutting-edge Azure, Databricks, and AI projects",
+        "Diverse industries and use cases",
+        "Mentorship from seasoned architects",
+        "Contribute to training curriculum",
+        "Path to Principal Architect and leadership",
+        "Conference attendance and speaking",
+      ]},
+      { heading: "What We Offer — Culture & Impact", items: [
+        "Small team; visible impact",
+        "Direct client interaction and ownership",
+        "Collaborative, low-ego culture",
+        "Train the next generation of data pros",
+        "Drive real business transformation",
+      ]},
+    ],
+    interviewProcess: [
+      "Phone Screen (30 min) — HR and hiring manager",
+      "Technical Interview (90 min) — Architecture design exercise",
+      "Case Study (60 min) — Present solution to mock client",
+      "Culture Fit (45 min) — Meet leadership and peers",
+      "Reference Checks (3 professional references)",
+    ],
+    timeline: "2-3 weeks from application to offer",
+    howToApply: {
+      email: "careers@ripotek.ca",
+      subject: "Senior Data Architect - [Your Name]",
+      instructions: [
+        "A challenging data architecture problem you solved and your approach",
+        "Your experience with Azure/Databricks and excitement about the stack",
+        "What draws you to consulting and diverse clients",
+      ],
+    },
+  },
+  {
+    title: "Junior Data Engineer (Entry-Level)",
+    slug: "junior-data-engineer",
+    department: "Consulting",
+    employmentType: "Full-Time",
+    location: "Calgary, AB (Hybrid - 2 days/week in office)",
+    salaryRange: "$65,000 - $80,000 CAD",
+    reportingTo: "Senior Data Engineer or Architect",
+    summary:
+      "Support client projects by building data pipelines, writing SQL, and assisting with data platform implementations with strong mentorship and growth path.",
+    roleOverview:
+      "As a Junior Data Engineer, you'll support client projects by building data pipelines, writing SQL queries, and assisting with data platform implementations. This is an entry-level role ideal for recent graduates or candidates with 0-2 years of experience.",
+    sections: [
+      { heading: "Data Engineering (60%)", items: [
+        "Build and maintain ELT pipelines (ADF, Databricks, Fabric)",
+        "Write SQL for transformations and validation",
+        "Develop Python/Scala scripts for processing",
+        "Implement data quality checks and error handling",
+        "Assist with data modeling (dimensional, facts)",
+        "Document data flows and transformations",
+        "Unit test pipelines and monitor executions",
+      ]},
+      { heading: "Client Support (20%)", items: [
+        "Participate in client meetings and standups",
+        "Gather requirements from business users",
+        "Create runbooks and data dictionaries",
+        "Provide status updates; support UAT",
+      ]},
+      { heading: "Learning & Development (20%)", items: [
+        "Shadow senior engineers and architects",
+        "Complete training modules and certifications",
+        "Participate in code reviews",
+        "Attend weekly knowledge shares",
+        "Work toward Microsoft certifications",
+      ]},
+      { heading: "Required — Education & Experience", items: [
+        "Bachelor's in CS/IS or related, OR",
+        "Completion of Ripotek training, OR",
+        "Equivalent self-taught with projects",
+        "0-2 years in data engineering/analytics/BI",
+        "Internship/co-op is a plus; GitHub portfolio",
+      ]},
+      { heading: "Technical Skills", items: [
+        "SQL: SELECT, JOIN, GROUP BY, window functions",
+        "Python basics (pandas, requests, file I/O)",
+        "Azure basics (portal, RGs, storage)",
+        "Data concepts: ETL/ELT, DW, lakes",
+        "Git basics; VS Code/Azure Data Studio",
+      ]},
+      { heading: "Nice to Have", items: [
+        "ADF, Databricks, Synapse exposure",
+        "Power BI",
+        "Spark/Scala basics",
+        "CI/CD concepts",
+        "Agile (Scrum/Kanban)",
+      ]},
+      { heading: "Soft Skills", items: [
+        "Eagerness to learn; attention to detail",
+        "Follow instructions; ask clarifying questions",
+        "Time management and deadlines",
+        "Team player; receptive to feedback",
+        "Strong written and verbal communication",
+      ]},
+      { heading: "Preferred Qualifications", items: [
+        "DP-900 (Azure Data Fundamentals)",
+        "DP-203 (Azure Data Engineer) or pursuing",
+        "Completion of Ripotek program with strong performance",
+        "Internship in tech/consulting",
+        "Open-source contributions; blog/portfolio",
+      ]},
+      { heading: "What We Offer — Compensation & Benefits", items: [
+        "Salary $65K-$80K + 5-10% bonus",
+        "RRSP matching (3%)",
+        "Health, dental, vision",
+        "Professional development ($2,500/year)",
+        "Certification exam fees covered",
+      ]},
+      { heading: "Work Environment", items: [
+        "Hybrid: 2 days/week for collaboration",
+        "Flexible hours (core 10am-3pm MT)",
+        "MacBook Pro or Surface",
+        "Home office allowance ($1,000)",
+        "Modern downtown office",
+      ]},
+      { heading: "Growth & Development", items: [
+        "Structured onboarding and mentorship",
+        "Pair programming; bi-weekly 1:1s",
+        "Clear path to Intermediate/Senior",
+        "Exposure to multiple clients and industries",
+        "Encouraged to certify; annual reviews",
+      ]},
+      { heading: "Culture", items: [
+        "Supportive, learning-focused",
+        "Questions encouraged; diverse team",
+        "Meaningful projects for real clients",
+        "Collaborative, low-pressure; celebrates growth",
+      ]},
+      { heading: "What Success Looks Like (First Year)", items: [
+        "Months 1-3: Onboarding; small pipeline tasks",
+        "Months 4-6: Build simple pipelines; DP-900",
+        "Months 7-9: Lead small modules; start DP-203",
+        "Months 10-12: Contribute to design; earn DP-203",
+      ]},
+    ],
+    interviewProcess: [
+      "Phone Screen (30 min) — HR and hiring manager",
+      "Technical Assessment (2-3 hours take-home) — Simple pipeline",
+      "Technical Interview (60 min) — SQL, Python, Azure basics",
+      "Behavioral Interview (30 min)",
+      "Team Meet (30 min)",
+    ],
+    timeline: "2 weeks from application to offer",
+    howToApply: {
+      email: "careers@ripotek.ca",
+      subject: "Junior Data Engineer - [Your Name]",
+      instructions: [
+        "What excites you about data engineering",
+        "A project you've worked on and what you learned",
+        "Why you want to start at Ripotek",
+      ],
+    },
+  },
+  {
+    title: "Student Success Coordinator",
+    slug: "student-success-coordinator",
+    department: "Training & Development",
+    employmentType: "Full-Time",
+    location: "Calgary, AB (Hybrid - 3 days/week in office)",
+    salaryRange: "$55,000 - $70,000 CAD",
+    reportingTo: "Director of Training Programs",
+    summary:
+      "Own student lifecycle from enrollment to job placement, combining operations, advising, career coaching, and community building to maximize outcomes.",
+    roleOverview:
+      "As Student Success Coordinator, you'll be the primary point of contact for students enrolled in Ripotek's training programs. You'll manage the student lifecycle from enrollment through graduation and job placement, ensuring every student has the support and resources they need to succeed.",
+    sections: [
+      { heading: "Student Onboarding & Operations (30%)", items: [
+        "Manage enrollment process and system access",
+        "Onboard new students and orientation",
+        "Maintain records in CRM and LMS",
+        "Coordinate schedules, rooms, Zoom links",
+        "Send weekly announcements and reminders",
+        "Track attendance and follow up",
+        "Process LOA/deferrals/withdrawals",
+        "Manage equipment loans",
+        "Coordinate with instructors on accommodations",
+      ]},
+      { heading: "Student Support & Advising (25%)", items: [
+        "First point of contact for questions",
+        "Monitor engagement; proactive outreach",
+        "Check-in calls/meetings with at-risk students",
+        "Connect to tutoring, mental health, aid",
+        "Facilitate study groups and communities",
+        "Mediate conflicts; gather feedback",
+        "Maintain pulse on sentiment and escalate",
+      ]},
+      { heading: "Career Services & Job Placement (30%)", items: [
+        "Resume and LinkedIn reviews",
+        "Mock interviews (technical and behavioral)",
+        "Teach job search and networking",
+        "Connect with hiring partners",
+        "Track job search progress and outcomes",
+        "Maintain alumni and employer relationships",
+        "Organize employer sessions and events",
+        "Prepare for assessments and interviews",
+        "Celebrate wins on social media",
+      ]},
+      { heading: "Community Building & Events (10%)", items: [
+        "Plan and execute student events",
+        "Manage Slack workspace",
+        "Create community and belonging",
+        "Recognize achievements and foster mentorship",
+        "Coordinate guest speakers",
+      ]},
+      { heading: "Reporting & Process Improvement (5%)", items: [
+        "Track and report key metrics",
+        "Identify trends and recommend improvements",
+        "Document processes and SOPs",
+        "Support marketing with testimonials",
+        "Participate in program reviews",
+      ]},
+      { heading: "Required Qualifications — Experience", items: [
+        "2+ years in student services, customer success, or advising",
+        "Experience with adult learners or career-changers",
+        "Background in education/training/edtech",
+        "Relationship-building and trust",
+        "Manage multiple priorities and deadlines",
+      ]},
+      { heading: "Required Skills", items: [
+        "Communication: excellent written and verbal",
+        "Empathy: understand challenges; provide support",
+        "Organization: strong PM and admin",
+        "Tech savvy: CRMs, LMS, Slack, Zoom, Google Workspace",
+        "Problem solving: resourceful and solutions-oriented",
+        "Career coaching basics",
+        "Data-driven and metrics aware",
+      ]},
+      { heading: "Soft Skills", items: [
+        "Passion for helping people succeed",
+        "High emotional intelligence",
+        "Patient and calm under pressure",
+        "Proactive with strong follow-through",
+        "Detail-oriented and collaborative",
+        "Positive, encouraging attitude",
+      ]},
+      { heading: "Preferred Qualifications", items: [
+        "BA in Education/Psychology/Social Work or related",
+        "Bootcamp or technical training experience",
+        "Knowledge of data/tech careers",
+        "LinkedIn Recruiter and job boards",
+        "Career coach/counselor certified",
+        "Salesforce/HubSpot or CRM experience",
+        "Bilingual is an asset; HR/talent background",
+      ]},
+      { heading: "What We Offer — Compensation & Benefits", items: [
+        "Salary $55K-$70K + 5-10% bonus",
+        "RRSP matching (3%)",
+        "Health, dental, vision",
+        "Professional development ($2,000/year)",
+        "Wellness stipend ($500/year)",
+      ]},
+      { heading: "Work Environment", items: [
+        "Hybrid: 3 days/week in office",
+        "Flexible hours with some evenings",
+        "Modern downtown office",
+        "Laptop and home office allowance",
+        "Casual dress code",
+      ]},
+      { heading: "Growth & Impact", items: [
+        "Direct impact on student transformations",
+        "Build tight-knit community",
+        "Shape experience as programs scale",
+        "Path to Director of Student Success",
+        "Cross-functional exposure",
+      ]},
+      { heading: "Culture", items: [
+        "Mission-driven; student outcomes focused",
+        "Supportive, collaborative team",
+        "Celebrate wins together",
+        "Work-life balance respected",
+        "Inclusive and welcoming",
+      ]},
+      { heading: "Typical Week", items: [
+        "Mon: Team meeting, check-ins, resume reviews",
+        "Tue: In-office — meetings, employer outreach, admin",
+        "Wed: In-office — orientation and 1-on-1s",
+        "Thu: Remote — Slack engagement, mock interviews, reporting",
+        "Fri: Remote — planning and development",
+        "Evenings (2-3x/wk): Student calls (6-8pm MT)",
+      ]},
+    ],
+    interviewProcess: [
+      "Phone Screen (30 min) — HR and hiring manager",
+      "Scenario Interview (45 min) — Student situations role play",
+      "Career Coaching Demo (30 min) — Resume review and feedback",
+      "Team Fit (30 min) — Meet instructors and operations",
+      "Reference Checks (2 references)",
+    ],
+    howToApply: {
+      email: "careers@ripotek.ca",
+      subject: "Student Success Coordinator - [Your Name]",
+      instructions: [
+        "A time you helped someone overcome a challenge",
+        "Why you're passionate about adult education and transitions",
+        "Your approach to community and belonging",
+      ],
+    },
+  },
+  {
+    title: "Azure Solutions Consultant",
+    slug: "azure-solutions-consultant",
+    department: "Consulting",
+    employmentType: "Full-Time",
+    location: "Calgary, AB (Hybrid - 2 days/week in office)",
+    salaryRange: "$95,000 - $130,000 CAD + bonus",
+    travel: "10-20% (Western Canada)",
+    summary:
+      "Design and implement modern data platforms on Azure for enterprise clients, building end-to-end pipelines, lakehouses, and governed analytics solutions.",
+    roleOverview:
+      "As an Azure Solutions Consultant, you'll design and implement modern data platforms on Azure for enterprise clients. You'll build end-to-end data pipelines, implement lakehouses, and create governed analytics solutions using Azure Data Factory, Databricks, Synapse, and Microsoft Fabric.",
+    sections: [
+      { heading: "Solution Delivery (65%)", items: [
+        "Design and implement Azure data architectures",
+        "Build ELT pipelines using ADF and Databricks",
+        "Implement medallion architecture with Delta Lake",
+        "Design and optimize data models",
+        "Configure security and governance (Purview)",
+        "Implement CI/CD with Azure DevOps",
+        "Troubleshoot and optimize performance",
+        "Create technical documentation",
+        "Provide knowledge transfer",
+      ]},
+      { heading: "Client Engagement (25%)", items: [
+        "Discovery workshops and requirements",
+        "Present solutions to stakeholders",
+        "Collaborate with client teams",
+        "Manage expectations and status",
+        "Support sales with scoping and estimation",
+        "Gather feedback and iterate",
+      ]},
+      { heading: "Professional Development (10%)", items: [
+        "Stay current with Azure updates",
+        "Pursue Microsoft certifications",
+        "Contribute to knowledge sharing",
+        "Mentor junior consultants",
+        "Participate in community events",
+      ]},
+      { heading: "Required Qualifications — Experience", items: [
+        "4+ years in data/cloud engineering or BI",
+        "2+ years with Azure data services",
+        "Delivered 3+ end-to-end platforms",
+        "Experience with on-prem and cloud",
+        "Direct client/business stakeholder work",
+      ]},
+      { heading: "Required Qualifications — Technical Skills", items: [
+        "ADF, Data Lake Gen2, Synapse, Databricks",
+        "SQL (advanced), Python (intermediate)",
+        "Orchestration: ADF, Databricks workflows, Functions",
+        "Modeling: dimensional, SCD",
+        "Git, Azure Repos/GitHub, CI/CD",
+        "Power BI basics",
+        "IaC: ARM, Terraform, Bicep (nice to have)",
+      ]},
+      { heading: "Required Qualifications — Soft Skills", items: [
+        "Strong communication across audiences",
+        "Problem-solving mindset",
+        "Self-directed; manage priorities",
+        "Comfortable with ambiguity",
+        "Team player; collaborative",
+        "Eagerness to learn",
+      ]},
+      { heading: "Preferred Qualifications", items: [
+        "DP-203, Solutions Architect Expert",
+        "Databricks DE Associate",
+        "Experience with Microsoft Fabric",
+        "Governance tools (Purview, Collibra)",
+        "Streaming (Event Hubs, Kafka, Stream Analytics)",
+        "Consulting experience",
+        "Domain expertise: Energy, Finance, Public Sector",
+      ]},
+      { heading: "What We Offer — Compensation & Benefits", items: [
+        "Salary $95K-$130K + 10-15% bonus",
+        "RRSP matching (4%)",
+        "Health, dental, vision",
+        "Professional development ($3,500/year)",
+        "Cert exam fees and training covered",
+      ]},
+      { heading: "Work Environment", items: [
+        "Hybrid: 2 days/week in-office",
+        "Flexible hours (core 10am-3pm MT)",
+        "Latest MacBook Pro or Surface",
+        "Home office allowance ($1,500)",
+        "Downtown Calgary office",
+      ]},
+      { heading: "Growth & Development", items: [
+        "Diverse projects across industries",
+        "Mentorship from senior architects",
+        "Clear career progression",
+        "Specialize in Databricks/Fabric/AI",
+        "Pre-sales and client management exposure",
+        "Internal training on new services",
+      ]},
+      { heading: "Culture", items: [
+        "Collaborative, low-ego team",
+        "Direct impact on client success",
+        "Knowledge sharing culture",
+        "Supportive of work-life balance",
+        "Small company; your voice matters",
+      ]},
+    ],
+    interviewProcess: [
+      "Phone Screen (30 min) — HR + technical lead",
+      "Technical Interview (90 min) — Azure architecture & pipelines",
+      "Coding Challenge (take-home, 2-3 hours) — Simple ELT pipeline",
+      "Client Scenario (45 min) — Present solution",
+      "Team Fit (30 min) — Meet the team",
+    ],
+    timeline: "2-3 weeks from application to offer",
+    howToApply: {
+      email: "careers@ripotek.ca",
+      subject: "Azure Solutions Consultant - [Your Name]",
+      instructions: [
+        "Brief description of the most complex pipeline you've built",
+        "Your Azure certification status or plan",
+        "What excites you about modern data platforms and Azure",
+      ],
+    },
+  },
+  {
+    title: "Power BI Instructor (Training Programs)",
+    slug: "power-bi-instructor",
+    department: "Training & Development",
+    employmentType: "Contract (Renewable)",
+    location: "Remote (Calgary-based preferred)",
+    compensation: "$80-$120/hour CAD",
+    commitment: "12-24 weeks per cohort, 2-3 cohorts per year",
+    summary:
+      "Deliver live, instructor-led Power BI Analyst training programs to 15-25 students per cohort, combining teaching, mentorship, and career coaching.",
+    roleOverview:
+      "Deliver live, instructor-led Power BI Analyst training programs to aspiring data professionals. You'll teach 15-25 students per cohort through a 12-week intensive program covering Power BI Desktop, DAX, data modeling, and enterprise BI best practices.",
+    sections: [
+      { heading: "Instruction & Curriculum Delivery (50%)", items: [
+        "Deliver 3-hour live sessions 3x/week (Mon/Wed/Sat 6-9pm MT)",
+        "Teach foundational to advanced Power BI topics",
+        "Demonstrate concepts through live coding and real examples",
+        "Facilitate hands-on labs and troubleshoot in real-time",
+        "Adapt teaching style to diverse learning paces",
+        "Create engaging sessions (polls, breakouts, Q&A)",
+        "Record sessions for review",
+      ]},
+      { heading: "Student Support & Mentorship (25%)", items: [
+        "Weekly office hours (2-3 hours) for 1-on-1 help",
+        "Review and grade weekly lab assignments",
+        "Provide detailed feedback on projects",
+        "1-on-1 check-ins with struggling students",
+        "Mentor on career development and job search",
+        "Write LinkedIn recommendations for top students",
+        "Serve as technical reference for students",
+      ]},
+      { heading: "Assessment & Feedback (15%)", items: [
+        "Create and grade quizzes, exams, and assessments",
+        "Evaluate capstone projects using rubric",
+        "Provide feedback on DAX, models, and design",
+        "Track progress and identify at-risk students",
+        "Prepare for PL-300 certification",
+        "Conduct mock technical interviews",
+      ]},
+      { heading: "Curriculum Development & Improvement (10%)", items: [
+        "Update materials based on feedback and industry",
+        "Develop new labs and capstone scenarios",
+        "Stay current with Power BI updates",
+        "Suggest curriculum improvements",
+        "Contribute to Power BI knowledge base",
+      ]},
+      { heading: "Required Qualifications — Professional Experience", items: [
+        "5+ years as BI developer/analyst/consultant with Power BI",
+        "Built 20+ production Power BI dashboards",
+        "Deep expertise in DAX and data modeling",
+        "Power Query M for data transformation",
+        "Power BI Service, workspaces, pipelines, RLS",
+        "Visualization best practices",
+      ]},
+      { heading: "Required Qualifications — Teaching Experience", items: [
+        "2+ years teaching, training, or mentoring",
+        "Explain complex concepts to beginners",
+        "Comfortable with live, virtual instruction",
+        "Adapt teaching style to student needs",
+        "Patient, encouraging, and supportive",
+      ]},
+      { heading: "Required Qualifications — Technical Skills", items: [
+        "Power BI Desktop, Service, Report Builder, Paginated",
+        "DAX advanced functions and time intelligence",
+        "Power Query M language and custom functions",
+        "Data modeling (star schema, SCD, fact tables)",
+        "SQL (T-SQL intermediate)",
+        "Excel advanced (pivot, Power Pivot)",
+        "Azure basics (SQL, Data Lake, Synapse nice to have)",
+      ]},
+      { heading: "Required Qualifications — Soft Skills", items: [
+        "Excellent communication",
+        "High energy for teaching",
+        "Empathy for non-technical backgrounds",
+        "Strong time management",
+        "Actionable feedback",
+        "Comfortable with public speaking",
+      ]},
+      { heading: "Preferred Qualifications", items: [
+        "PL-300 certified",
+        "Prior teaching in bootcamp/college/corporate",
+        "Experience with LMS platforms",
+        "Background in adult education/instructional design",
+        "Active in Power BI community",
+        "Consulting or freelance experience",
+        "Knowledge of Tableau/Looker/Qlik",
+      ]},
+      { heading: "Compensation", items: [
+        "$80-$120/hour based on experience",
+        "Guaranteed minimum hours/cohort (150)",
+        "Paid prep time",
+        "Bonuses based on satisfaction and placement",
+      ]},
+      { heading: "Flexibility", items: [
+        "Remote instruction (Canada)",
+        "Evening classes (6-9pm MT)",
+        "12-week commitment per cohort",
+        "2-4 week breaks between cohorts",
+      ]},
+      { heading: "Impact & Growth", items: [
+        "Direct impact on student careers",
+        "Build personal brand as instructor",
+        "Contribute to curriculum",
+        "Potential to teach additional programs",
+        "Join expert instructor community",
+      ]},
+      { heading: "Support & Resources", items: [
+        "Comprehensive curriculum and materials",
+        "TA support for large cohorts",
+        "Instructor training and peer learning",
+        "Access to Azure/Power BI environments",
+        "Admin support for grading and management",
+      ]},
+      { heading: "Teaching Schedule (12-Week Program)", items: [
+        "Live: Mon/Wed/Sat 6-9pm MT (36 sessions)",
+        "Office hours: 2-3 hours/week",
+        "Grading: ~3-5 hours/week",
+        "Total: ~15-18 hours/week",
+      ]},
+    ],
+    interviewProcess: [
+      "Initial Screening (30 min) — Philosophy & experience",
+      "Technical Assessment (60 min) — Build a dashboard (take-home)",
+      "Teaching Demo (45 min) — 15-min DAX lesson",
+      "Student Empathy (30 min) — Approach to diverse learners",
+      "Reference Checks (2 references)",
+    ],
+    howToApply: {
+      email: "training@ripotek.ca",
+      subject: "Power BI Instructor - [Your Name]",
+      instructions: [
+        "A complex Power BI concept you love teaching and your beginner-friendly explanation",
+        "Your proudest dashboard and what made it successful",
+        "Why you're passionate about teaching data skills",
+      ],
+    },
+  },
+];

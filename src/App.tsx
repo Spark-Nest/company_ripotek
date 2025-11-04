@@ -11,7 +11,9 @@ import Services from "./pages/Services";
 import Training from "./pages/Training";
 import CaseStudies from "./pages/CaseStudies";
 import Resources from "./pages/Resources";
+import Whitepaper from "./pages/Whitepaper";
 import Careers from "./pages/Careers";
+import CareerJob from "./pages/CareerJob";
 import Contact from "./pages/Contact";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
@@ -40,7 +42,9 @@ const App = () => (
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/resources" element={<Resources />} />
+              <Route path="/resources/whitepapers/:slug" element={<Whitepaper />} />
               <Route path="/careers" element={<Careers />} />
+              <Route path="/careers/:slug" element={<CareerJob />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/privacy" element={<Privacy />} />

@@ -1,6 +1,8 @@
-import { FileText, Video, Download, Calendar } from "lucide-react";
+import { FileText, Video, Download, Calendar, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
+import { whitepapers } from "@/lib/whitepapers";
 
 const Resources = () => {
   const resourceCategories = [
@@ -8,7 +10,7 @@ const Resources = () => {
       icon: FileText,
       title: "Whitepapers & Research",
       description: "In-depth analysis on data architecture, governance, and industry trends.",
-      comingSoon: true
+      comingSoon: false
     },
     {
       icon: Video,
@@ -40,6 +42,57 @@ const Resources = () => {
             <p className="text-xl opacity-90">
               Insights, templates, and educational content to accelerate your data journey.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Whitepapers */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Whitepapers & <span className="gradient-text">Research</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              In-depth guides and frameworks from real-world Canadian implementations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {whitepapers.map((wp, idx) => (
+              <Card key={wp.slug} className="hover-lift border-2 animate-fade-in" style={{ animationDelay: `${idx * 100}ms` }}>
+                {wp.cover ? (
+                  <div className="relative h-44 w-full overflow-hidden bg-gradient-to-br from-primary/20 to-accent/30">
+                    <img
+                      src={wp.cover}
+                      alt={wp.title}
+                      loading="lazy"
+                      onError={(e) => {
+                        // hide broken image and rely on gradient background
+                        (e.currentTarget as HTMLImageElement).style.display = 'none';
+                      }}
+                      className="h-full w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/10 to-transparent" />
+                  </div>
+                ) : null}
+                <CardHeader>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                      <FileText className="h-6 w-6 text-white" />
+                    </div>
+                    {wp.date && <Badge variant="secondary">{wp.date}</Badge>}
+                  </div>
+                  <CardTitle className="text-xl">{wp.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">{wp.summary}</p>
+                  <Link to={`/resources/whitepapers/${wp.slug}`} className="inline-flex items-center text-accent font-medium">
+                    Read whitepaper <ArrowRight className="h-4 w-4 ml-1" />
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

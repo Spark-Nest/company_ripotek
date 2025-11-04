@@ -66,14 +66,7 @@ const Careers = () => {
     }
   };
 
-    // Redirect legacy anchors like /careers#<slug> to /careers/<slug>
-  useEffect(() => {
-    const hash = window.location.hash?.replace('#', '');
-    if (hash && jobs.some(j => j.slug === hash)) {
-      navigate(`/careers/${hash}`, { replace: true });
-    }
-  }, [navigate]);
-const onShare = async (title: string, slug: string) => {
+  const onShare = async (title: string, slug: string) => {
     const url = buildJobUrl(slug);
     if ((navigator as any).share) {
       try {
@@ -322,5 +315,10 @@ const onShare = async (title: string, slug: string) => {
 };
 
 export default Careers;
- 
-
+  // Redirect legacy anchors like /careers#<slug> to /careers/<slug>
+  useEffect(() => {
+    const hash = window.location.hash?.replace('#', '');
+    if (hash && jobs.some(j => j.slug === hash)) {
+      navigate(`/careers/${hash}`, { replace: true });
+    }
+  }, [navigate]);
