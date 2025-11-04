@@ -40,7 +40,7 @@ const Navigation = () => {
             <img src={ripotekLogo} alt="Ripotek Technology Inc." className="h-10 w-10 md:h-12 md:w-12" />
             <div className="leading-tight">
               <div className="font-brand text-3xl md:text-4xl font-extrabold tracking-wide text-primary">Ripotek</div>
-              <div className="font-brand text-[9px] md:text-[11px] text-muted-foreground tracking-[0.12em]">Design, Engineer, Deliver</div>
+              <div className="font-brand text-[9px] md:text-[11px] text-muted-foreground tracking-[0.18em]">Design.Engineer.Deliver</div>
             </div>
           </Link>
 
