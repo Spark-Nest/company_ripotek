@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { getWhitepaperBySlug } from "@/lib/whitepapers";
-import { ArrowRight, Download, Copy, Share2, FileDown } from "lucide-react";
+import { ArrowRight, Copy, Share2, FileDown } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 
 type Heading = { id: string; text: string; level: 1 | 2 | 3 };
@@ -23,16 +23,6 @@ const Whitepaper = () => {
 
   const { html, headings } = renderMarkdown(wp.body);
   const toc = headings.filter((h) => h.level !== 1);
-
-  const download = () => {
-    const blob = new Blob([wp.body], { type: "text/markdown;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `${wp.slug}.md`;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
 
   const onCopyLink = async () => {
     const url = window.location.href;
@@ -125,9 +115,6 @@ const Whitepaper = () => {
             <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-2">{wp.title}</h1>
             {wp.date && <div className="text-sm opacity-90 mb-4">{wp.date}</div>}
             <div className="flex items-center gap-2">
-              <button onClick={download} className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-md border bg-background text-foreground hover:bg-muted transition-colors">
-                <Download className="h-4 w-4" /> Download (.md)
-              </button>
               <button onClick={onCopyLink} className="inline-flex items-center gap-2 text-sm px-3 py-2 rounded-md border bg-background text-foreground hover:bg-muted transition-colors">
                 <Copy className="h-4 w-4" /> Copy link
               </button>
