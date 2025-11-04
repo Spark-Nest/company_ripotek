@@ -296,9 +296,7 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <Button className="w-full" variant="outline" asChild>
-                  <a href="/careers#openings" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>
-                    Join Network
-                  </a>
+                  <Link to="/careers#openings">Join Network</Link>
                 </Button>
               </CardContent>
             </Card>
