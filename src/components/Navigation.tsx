@@ -19,6 +19,9 @@ const Navigation = () => {
     name: "Case Studies",
     path: "/case-studies"
   }, {
+    name: "Blog",
+    path: "/blog"
+  }, {
     name: "Resources",
     path: "/resources"
   }, {
