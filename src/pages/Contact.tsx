@@ -280,11 +280,10 @@ const Contact = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full" variant="outline" asChild>
-                  <a href="/capabilities/capabilities.html" target="_blank" rel="noopener noreferrer">
-                    Download Deck
-                  </a>
+                <Button className="w-full" variant="outline" disabled title="Coming soon">
+                  Download Deck
                 </Button>
+                <p className="text-xs text-muted-foreground text-center mt-2">Capabilities deck coming soon.</p>
               </CardContent>
             </Card>
 
