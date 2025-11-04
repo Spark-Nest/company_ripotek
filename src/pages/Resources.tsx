@@ -151,7 +151,7 @@ const Resources = () => {
             </p>
             <div className="p-8 bg-card rounded-xl border-2 border-dashed border-border">
               <p className="text-muted-foreground">
-                Coming soon. For immediate needs, please <a href="/contact" className="text-accent hover:underline">contact us</a> 
+                Coming soon. For immediate needs, please <Link to="/contact" className="text-accent hover:underline">contact us</Link> 
                 for a custom presentation.
               </p>
             </div>

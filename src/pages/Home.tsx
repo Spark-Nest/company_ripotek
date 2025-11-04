@@ -65,7 +65,6 @@ const Home = () => {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video className="w-full h-full object-cover" autoPlay muted loop playsInline preload="metadata" poster={heroImage}>
-            <source src="/media/hero.mp4" type="video/mp4" />
             <source src="https://cdn.coverr.co/videos/coverr-coding-and-collaboration-6994/1080p.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-br from-sky-900/70 via-primary/60 to-emerald-800/70" />
