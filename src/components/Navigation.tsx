@@ -36,6 +36,9 @@ const Navigation = () => {
     name: "Resources",
     path: "/resources"
   }, {
+    name: "Pricing",
+    path: "/pricing"
+  }, {
     name: "Careers",
     path: "/careers"
   }];
@@ -51,7 +54,7 @@ const Navigation = () => {
             <img src={ripotekLogo} alt="Ripotek Technology Inc." className="h-10 w-10 md:h-12 md:w-12" />
             <div className="leading-tight">
               <div className="font-brand text-3xl md:text-4xl font-extrabold tracking-wide text-primary">Ripotek</div>
-              <div className="font-brand text-[9px] md:text-[11px] text-muted-foreground tracking-[0.18em]">Design . Engineer . Deliver</div>
+              <div className="font-brand italic font-normal leading-none text-[7px] md:text-[9px] text-muted-foreground tracking-tight">Design.Engineer.Deliver</div>
             </div>
           </Link>
 
@@ -115,6 +118,7 @@ const Navigation = () => {
                 <DropdownMenuItem asChild><Link to="/resources#whitepapers">Whitepapers</Link></DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+            <Link to="/pricing" className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${isActive('/pricing') ? "bg-primary text-primary-foreground" : "text-foreground hover:bg-muted"}`}>Pricing</Link>
 
             <Link to="/careers" className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${isActive('/careers') ? "bg-primary text-primary-foreground" : "text-foreground hover:bg-muted"}`}>Careers</Link>
           </div>

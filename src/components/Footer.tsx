@@ -51,7 +51,7 @@ const Footer = () => {
               <img src={ripotekLogo} alt="Ripotek Technology Inc." className="h-12 w-12" />
               <div className="flex flex-col">
                 <span className="text-xl font-bold">Ripotek Technology Inc.</span>
-                <span className="text-sm opacity-80">Design. Engineer. Deliver</span>
+                <span className="italic font-normal leading-none text-[9px] md:text-[10px] opacity-80 tracking-tight">Design.Engineer.Deliver</span>
               </div>
             </Link>
             <p className="text-sm opacity-80 mb-6 max-w-sm">

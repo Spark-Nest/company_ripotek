@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -16,9 +16,29 @@ import { toast } from "sonner";
 import { MapPin, Mail, Phone, Send, Calendar as CalendarIcon, Inbox } from "lucide-react";
 
 const Contact = () => {
-  const [formType, setFormType] = useState<string>("consulting");
+  const [formType, setFormType] = useState<string>(() => {
+    try {
+      const p = new URLSearchParams(window.location.search);
+      return p.get("formType") || "consulting";
+    } catch { return "consulting"; }
+  });
   const calendlyUrl = (import.meta as any).env?.VITE_CALENDLY_URL || "https://calendly.com/paroyal007/30min";
   const formRef = useRef<HTMLFormElement | null>(null);
+
+  // Prefill values from query params
+  const prefill = useMemo(() => {
+    try {
+      const p = new URLSearchParams(window.location.search);
+      return {
+        firstName: p.get("firstName") || "",
+        lastName: p.get("lastName") || "",
+        email: p.get("email") || "",
+        phone: p.get("phone") || "",
+        company: p.get("company") || "",
+        message: p.get("message") || "",
+      };
+    } catch { return { firstName: "", lastName: "", email: "", phone: "", company: "", message: "" }; }
+  }, []);
 
   // Load Calendly inline widget script once on client
   useEffect(() => {
@@ -171,11 +191,11 @@ const Contact = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name *</Label>
-                        <Input id="firstName" placeholder="John" required />
+                        <Input id="firstName" placeholder="John" required defaultValue={prefill.firstName} />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="lastName">Last Name *</Label>
-                        <Input id="lastName" placeholder="Doe" required />
+                        <Input id="lastName" placeholder="Doe" required defaultValue={prefill.lastName} />
                       </div>
                     </div>
 
@@ -183,11 +203,11 @@ const Contact = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="email">Email *</Label>
-                        <Input id="email" type="email" placeholder="john@example.com" required />
+                        <Input id="email" type="email" placeholder="john@example.com" required defaultValue={prefill.email} />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="phone">Phone</Label>
-              <Input id="phone" type="tel" placeholder="+1306-999-3552" />
+              <Input id="phone" type="tel" placeholder="+1306-999-3552" defaultValue={prefill.phone} />
                       </div>
                     </div>
 
@@ -195,7 +215,7 @@ const Contact = () => {
                     {(formType === "consulting" || formType === "general") && (
                       <div className="space-y-2">
                         <Label htmlFor="company">Company/Organization</Label>
-                        <Input id="company" placeholder="Your Company Name" />
+                        <Input id="company" placeholder="Your Company Name" defaultValue={prefill.company} />
                       </div>
                     )}
 
@@ -229,6 +249,7 @@ const Contact = () => {
                         placeholder="Tell us about your needs..." 
                         rows={6}
                         required 
+                        defaultValue={prefill.message}
                       />
                     </div>
 
