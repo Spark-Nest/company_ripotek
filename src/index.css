@@ -134,6 +134,11 @@ All colors MUST be HSL.
     background-image: var(--gradient-accent);
   }
 
+  .gradient-text-secondary {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
   .gradient-bg {
     background-image: var(--gradient-hero);
   }

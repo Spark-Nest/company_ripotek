@@ -76,13 +76,16 @@ const Home = () => {
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
               <span className="gradient-text">Envision. Engineer. Elevate.</span>
-              <br />Modern Data Systems, Real Outcomes.
+              <br />
+              <span className="bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+                Modern Data Systems, Real Outcomes.
+              </span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground/90 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
               We design and build resilient analytics platforms on Azure and Databricks—governed, performant, and ready for scale. Then we upskill your teams to run them.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-lg px-8 text-[#000a00]/[0.51]">
+              <Button size="lg" asChild className="bg-gradient-to-r from-accent to-accent-glow hover:opacity-90 text-lg px-8 text-accent-foreground shadow-lg shadow-accent/20 hover:shadow-accent/40 transition-shadow">
                 <Link to="/contact">
                   Book Discovery Call <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
