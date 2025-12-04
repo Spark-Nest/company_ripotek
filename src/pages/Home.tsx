@@ -55,6 +55,7 @@ const Home = () => {
   }];
   const partners = [
     { name: "Microsoft Azure", src: "/logos/color/azure-color.svg", href: "https://azure.microsoft.com/" },
+    { name: "Amazon Web Services", src: "/logos/color/aws-color.svg", href: "https://aws.amazon.com/" },
     { name: "Databricks", src: "/logos/color/databricks-color.svg", href: "https://www.databricks.com/" },
     { name: "Microsoft Fabric", src: "/logos/color/fabric-color.png", href: "https://www.microsoft.com/fabric" },
     { name: "Power BI", src: "/logos/color/powerbi-color.svg", href: "https://powerbi.microsoft.com/" },
